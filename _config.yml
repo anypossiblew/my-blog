@@ -1,0 +1,16 @@
+# Site settings
+title: 暗梅幽闻花
+email: anypossible.w@gmail.com
+description: "Write your site description here. It will be used as your sites meta description as well!"
+baseurl: ""
+url: "http://www.暗梅幽闻花.com"
+twitter_username: anyispossible
+github_username:  anypossiblew
+facebook_username:  anypossiblew
+
+# Build settings
+markdown: kramdown
+highlighter: pygments
+permalink: pretty
+paginate: 5
+exclude: ["node_modules"]
