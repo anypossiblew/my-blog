@@ -7,37 +7,27 @@ author:     "Start Bootstrap"
 header-img: "img/post-bg-06.jpg"
 ---
 
-<p>Never in all their history have men been able truly to conceive of the world as one: a single sphere, a globe, having the qualities of a globe, a round earth in which all the directions eventually meet, in which there is no center because every point, or none, is center — an equal earth which all men occupy as equals. The airman's earth, if free men make it, will be truly round: a globe in practice, not in theory.</p>
+<h2>缸中的大脑（Brain in a Vat）</h2>
+<blockquote>没有比所谓的“缸中的大脑”假说更有影响力的思想实验了。这个思想实验涵盖了从认知学到哲学到流行文化等各个领域。这个实验的内容是：想象有一个疯狂科学家把你的大脑从你的体内取出，放在某种生命维持液体中。大脑上插着电极，电极连到一台能产生图像和感官信号的电脑上。因为你获取的所有关于这个世界的信息都是通过你的大脑来处理的，这台电脑就有能力模拟你的日常体验。如果这确实可能的话，你要如何来证明你周围的世界是真实的，而不是由一台电脑产生的某种模拟环境？ </blockquote>
 
-<p>Science cuts two ways, of course; its products can be used for both good and evil. But there's no turning back from science. The early warnings about technological dangers also come from science.</p>
+<p>如果你觉得这听起来很像《黑客帝国》，那么你说对了。这部电影以及其他一些科幻作品，都是在这个思想实验的影响下创作出来的。这个实验的核心思想是让人们质疑自身经历的本质，并思考作为一个人的真正意义是什么。这个实验的最初原型可以一直追溯至笛卡尔。在他的《Meditations on the First Philosophy》一书中，笛卡尔提出了能否证明他所有的感官体验都是他自己的，而不是由某个“邪恶的魔鬼”产生的这样的疑问。笛卡尔用他的经典名言 “我思故我在”来回答这个问题。不幸的是，“缸中的大脑”实验更为复杂，因为连接着电极的大脑仍然可以思考。这个实验被广泛的讨论着，有许多对于此实验前提的反驳，但仍没有人能有力的回应其核心问题：你究竟如何才能知道什么是真实？</p>
 
-<p>What was most significant about the lunar voyage was not that man set foot on the Moon but that they set eye on the earth.</p>
+<h2>伽利略的重力实验（Galileo’s Gravity Experiment）</h2>
+<blockquote>为了反驳亚里士多德的自由落体速度取决于物体的质量的理论，伽利略构造了一个简单的思想实验。根据亚里士多德的说法，如果一个轻的物体和一个重的物体绑在一起然后从塔上丢下来，那么重的物体下落的速度快，两个物体之间的绳子会被拉直。这时轻的物体对重物会产生一个阻力，使得下落速度变慢。但是，从另一方面来看，两个物体绑在一起以后的质量应该比任意一个单独的物体都大，那么整个系统下落的速度应该最快。这个矛盾证明了亚里士多德的理论是错误的。</blockquote>
 
-<p>A Chinese tale tells of some men sent to harm a young girl who, upon seeing her beauty, become her protectors rather than her violators. That's how I felt seeing the Earth for the first time. I could not help but love and cherish her.</p>
+<p>这个思想实验帮助证明了一个很重要的理论：无论物体的质量，不考虑阻力的情况下，所有物体自由落体的速率都是一样的。</p>
 
-<p>For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.</p>
+<h2>特修斯之船（The Ship of Theseus）</h2>
+<blockquote>最为古老的思想实验之一。最早出自普鲁塔克的记载。它描述的是一艘可以在海上航行几百年的船，归功于不间断的维修和替换部件。只要一块木板腐烂了，它就会被替换掉，以此类推，直到所有的功能部件都不是最开始的那些了。问题是，最终产生的这艘船是否还是原来的那艘特修斯之船，还是一艘完全不同的船？如果不是原来的船，那么在什么时候它不再是原来的船了？哲学家Thomas Hobbes后来对此进来了延伸，如果用特修斯之船上取下来的老部件来重新建造一艘新的船，那么两艘船中哪艘才是真正的特修斯之船？</blockquote>
 
-<h2 class="section-heading">The Final Frontier</h2>
+<p>对于哲学家，特修斯之船被用来研究身份的本质。特别是讨论一个物体是否仅仅等于其组成部件之和。一个更现代的例子就是一个不断发展的乐队，直到某一阶段乐队成员中没有任何一个原始成员。这个问题可以应用于各个领域。对于企业，在不断并购和更换东家后仍然保持原来的名字。对于人体，人体不间断的进行着新陈代谢和自我修复。这个实验的核心思想在于强迫人们去反思身份仅仅局限在实际物体和现象中这一常识。</p>
 
-<p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
+<h2>爱因斯坦的光线（Einstein’s Light Beam）</h2>
+<blockquote>爱因斯坦著名的狭义相对论是受启于他16岁做的思想实验。在他的自传中，爱因斯坦回忆道他当时幻想在宇宙中追寻一道光线。他推理说，如果他能够以光速在光线旁边运动，那么他应该能够看到光线成为“在空间上不断振荡但停滞不前的电磁场”。对于爱因斯坦，这个思想实验证明了对于这个虚拟的观察者，所有的物理定律应该和一个相对于地球静止的观察者观察到的一样。</blockquote>
 
-<p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
+<p>事实上，没人确切知道这意味着什么。科学家一直都在争论一个如此简单的思想实验是如此帮助爱因斯坦完成到狭义相对论这如此巨大的飞跃的。在当时，这个实验中的想法与现在已被抛弃的“以太”理论相违背。但他经过了好多年才证明了自己是正确的。</p>
 
-<blockquote>The dreams of yesterday are the hopes of today and the reality of tomorrow. Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next ten.</blockquote>
+<h2>电车难题（The Trolley Problem）</h2>
+<blockquote>“电车难题”是伦理学领域最为知名的思想实验之一，其内容大致是：一个疯子把五个无辜的人绑在电车轨道上。一辆失控的电车朝他们驶来，并且片刻后就要碾压到他们。幸运的是，你可以拉一个拉杆，让电车开到另一条轨道上。但是还有一个问题，那个疯子在那另一条轨道上也绑了一个人。考虑以上状况，你应该拉拉杆吗？</blockquote>
 
-<p>Spaceflights cannot be stopped. This is not the work of any one man or even a group of men. It is a historical process which mankind is carrying out in accordance with the natural laws of human development.</p>
-
-<h2 class="section-heading">Reaching for the Stars</h2>
-
-<p>As we got further and further away, it [the Earth] diminished in size. Finally it shrank to the size of a marble, the most beautiful you can imagine. That beautiful, warm, living object looked so fragile, so delicate, that if you touched it with a finger it would crumble and fall apart. Seeing this has to change a man.</p>
-
-<a href="#">
-    <img class="img-responsive" src="{{ site.baseurl }}/img/post-sample-image.jpg" alt="">
-</a>
-<span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span>
-
-<p>Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no man has gone before.</p>
-
-<p>As I stand out here in the wonders of the unknown at Hadley, I sort of realize there’s a fundamental truth to our nature, Man must explore, and this is exploration at its greatest.</p>
-
-<p>Placeholder text by <a href="http://spaceipsum.com/">Space Ipsum</a>. Photographs by <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>.</p>
+<p>电车难题最早是由哲学家Philippa Foot提出的，用来批判伦理哲学中的主要理论，特别是功利主义。功利主义提出的观点是，大部分道德决策都是根据“为最多的人提供最大的利益”的原则做出的。从一个功利主义者的观点来看，明显的选择应该是拉拉杆，拯救五个人只杀死一个人。但是功利主义的批判者认为，一旦拉了拉杆，你就成为一个不道德行为的同谋——你要为另一条轨道上单独的一个人的死负部分责任。然而，其他人认为，你身处这种状况下就要求你要有所作为，你的不作为将会是同等的不道德。总之，不存在完全的道德行为，这就是重点所在。许多哲学家都用电车难题作为例子来表示现实生活中的状况经常强迫一个人违背他自己的道德准则，并且还存在着没有完全道德做法的情况。</p>
