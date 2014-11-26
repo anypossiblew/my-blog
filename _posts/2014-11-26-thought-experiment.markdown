@@ -1,9 +1,9 @@
 ---
 layout:     post
-title:      "Man must explore, and this is exploration at its greatest"
-subtitle:   "Problems look mighty small from 150 miles up"
-date:       2014-09-24 12:00:00
-author:     "Start Bootstrap"
+title:      "思维实验"
+subtitle:   "思维实验是科学实验的一种重要形式，是通过产生灵感、逻辑推理、数学演算等发现科学规律的过程"
+date:       2014-11-26 12:00:00
+author:     "暗梅幽闻花"
 header-img: "img/post-bg-06.jpg"
 ---
 
