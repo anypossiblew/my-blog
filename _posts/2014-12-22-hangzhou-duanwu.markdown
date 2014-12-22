@@ -4,7 +4,7 @@ title:      "端午杭州行"
 subtitle:   "端午佳节 再次来到杭州西湖 感受西子的美丽 落日的余辉 碧波荡漾"
 date:       2014-12-22 12:00:00
 author:     "暗梅幽闻花"
-header-img: "http://static.photoshows.cn/352.JPG@!photo-preview-lg"
+header-img: "img/photoshows-349.jpg"
 ---
 
 <h2 class="section-heading">杭州西湖</h2>
