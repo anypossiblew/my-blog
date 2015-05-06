@@ -4,7 +4,7 @@ title:      "About Tokens"
 subtitle:   "10 Things You Should Know about Tokens"
 date:       2015-04-30 12:00:00
 author:     "暗梅幽闻花"
-header-img: "img/about-tokens.jpg"
+header-img: "img/about-angular.png"
 ---
 <p>Couple weeks ago we published a short article about cookies vs tokens in the context of single page applications, in particular applied to AngularJs apps. It seems the community is interested in this topic, so we published a second article on token based authentication in realtime frameworks like socket.io. There is a great interest in this subject so we decided to continue with an article that explores in more detail some of the most common questions around token-based authentication. So here we go...</p>
 
