@@ -24,12 +24,20 @@ font-family: "Lucida Console", Monospace, "KaiTi";
  }
 
 .win-bsod-content {
-      position: relative;
+    position: relative;
     top: 200px;
-  width: 600px;
+    width: 600px;
     margin: auto;
 }
 
+
+@media screen and (max-width: 47em) {
+  .win-bsod-content {
+      top: 100px;
+      width: 100%;
+      padding: 20px;
+  }
+}
 .win-bsod h1 {     text-align: center;
     font: bold 12px "Lucida Console", Monospace;
     margin-bottom: 20px;
