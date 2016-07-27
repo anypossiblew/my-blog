@@ -60,6 +60,24 @@ font-family: "Lucida Console", Monospace, "KaiTi";
 <script type="text/javascript" src="/js/typed.min.js"></script>
 
 <script>
+  function pageback() {
+    window.location.href = "{{ site.url }}";
+  }
+  function keypress() {
+	$("#all_blogs").show();
+	$(".typed-element").typed({
+		strings: ["Press any key to back"],
+		typeSpeed: 0,
+		cursorChar: "_",
+		onStringTyped: function() { 
+                        $("body").unbind("keypress");
+                        $("body").unbind("touchstart");
+			$("body").keypress( pageback );
+                        $('body').on({ 'touchstart' : pageback });
+		}
+	});
+  }
+
   $(function(){
       $(".typed-element").typed({
         strings: [
@@ -72,17 +90,9 @@ font-family: "Lucida Console", Monospace, "KaiTi";
         cursorChar: "_",
         backDelay: 3000
       });
-     $("body").keypress( function() {
-	  $("#all_blogs").show();
-          $(".typed-element").typed({
-        strings: ["Press any key to back"],
-        typeSpeed: 0,
-        cursorChar: "_",
-        onStringTyped: function() { 
-$("body").keypress( function() { window.location.href = "{{ site.url }}";  });
- }
-      });
-	} )
+    
+     $("body").keypress( keypress);
+     $('body').on({ 'touchstart' : keypress });
   });
 </script>
 
