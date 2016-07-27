@@ -3,7 +3,7 @@ title: 暗梅幽闻花
 email: anypossible.w@gmail.com
 description: "Write your site description here. It will be used as your sites meta description !"
 baseurl: ""
-url: "http://www.暗梅幽闻花.com"
+url: "http://www.amywh.com"
 twitter_username: anyispossible
 github_username:  anypossiblew
 facebook_username:  anypossiblew
@@ -14,3 +14,6 @@ highlighter: pygments
 permalink: pretty
 paginate: 5
 exclude: ["node_modules"]
+
+gems:
+  - jekyll-paginate
