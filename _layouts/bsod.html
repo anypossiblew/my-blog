@@ -4,55 +4,74 @@
 
 <header>
 	<style>
-		.win-bsod {
-			position: fixed;
+.win-bsod {
+    position: fixed;
     display: block;
     top: 0px;
+    left: 0px;
     bottom: 0px;
     width: 100%;
     height: 100%;
     background: #00A none repeat scroll 0 0;		
-
-background: #00A;
     color: #d3d3d3;
-font-weight: bold;
+    font-weight: bold;
     font-size: 12px;
-font-family: "Lucida Console", Monospace, "KaiTi";
-    left: 0;
-    position: fixed;
-    top: 0;	
+    font-family: "Lucida Console", Monospace, "KaiTi";
  }
 
 .win-bsod-content {
     position: relative;
     top: 200px;
     width: 600px;
+    height: 300px;
     margin: auto;
 }
 
+#all_blogs { 
+	display: none; 
+	overflow-y: auto;
+	height: 100%;
+}
+#all_blogs p { 
+	margin: 15px 0; 
+}
 
 @media screen and (max-width: 47em) {
   .win-bsod-content {
+      position: absolute;
       top: 100px;
       width: 100%;
       padding: 20px;
+      bottom: 20px;
+      height: auto;
+  }
+  
+  #all_blogs {
+    bottom: 0;
+    position: absolute;
+    top: 100px;
+    left: 20px;
+    right: 20px;
+    height: auto;
   }
 }
-.win-bsod h1 {     text-align: center;
+.win-bsod h1 {     
+    text-align: center;
     font: bold 12px "Lucida Console", Monospace;
     margin-bottom: 20px;
 }
 
-.win-bsod h1 span {    background: #9A9A9A;
+.win-bsod h1 span {    
+    background: #9A9A9A;
     color: #00A;
     padding: 1px 7px;
 }
 
-.text-body { color: #d3d3d3;
+.text-body { 
+    color: #d3d3d3;
     line-height: 16px;
 }
-    #all_blogs { display: none; }
-    #all_blogs p { margin: 15px 0; }
+    
 	</style>
 </header>
 <body>
@@ -73,7 +92,17 @@ font-family: "Lucida Console", Monospace, "KaiTi";
                         $("body").unbind("keypress");
                         $("body").unbind("touchstart");
 			$("body").keypress( pageback );
-                        $('body').on({ 'touchstart' : pageback });
+			var flag = false;
+                        $('body').on({ 'touchstart' : function() {
+				if (!flag) {
+				    flag = true;
+				    setTimeout(function(){ flag = false; }, 100);
+				    // do something
+				  }
+			} });
+			$('body').on({ 'touchend' : function() {
+				if(flag) { pageback(); }
+			}});
 		}
 	});
   }
