@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="content-language" content="ja">
+<title>Mapbox(leaflet.js) Voronoi Diagram</title>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css"/>
+
+<style>
+html, body{
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+#map {
+  width:100%;
+  height: 100%;
+}
+
+.aqiLegendContainer {
+	position: relative;
+	left: 30px;
+}
+</style>
+</head>
+<body>
+<div id="map"></div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script> -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet-src.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.9.0/d3-legend.min.js"></script>
+
+<script>
+
+var colors = ["green", "yellow", "orange", "red", "black"];
+var aqiColour = d3.scaleLinear()
+					.domain([0, 51, 101, 151, 201])
+					.range(colors);
+
+var aqiData = [];
+
+//leaflet初期設定
+	var map = L.map('map');  
+	map.setView([30.3894816, 121.0634281], 6);
+	map.on("viewreset moveend", onMapChanged);
+ 
+	var mapLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+	
+	L.tileLayer(
+		'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+		{
+			attribution: 'Map data &copy; ' + mapLink,
+			maxZoom: 18
+		}
+	).addTo(map); 
+ 
+   
+	// オーバーレイレイヤ追加
+	map._initPathRoot();
+	var svg = d3.select("#map").select("svg");
+	var g = svg.append("g").attr("class", "leaflet-zoom-hide");
+
+	var pSize = map.getPixelBounds().getSize();
+  	
+	//ボロノイジェネレーター
+	var voronoi = d3.voronoi()
+		.extent([[-pSize.x, -pSize.y], [pSize.x + 1, pSize.y + 1]])
+		.x(function(d) { return d.x; })
+		.y(function(d) { return d.y; });
+
+	legend(svg);
+
+	onMapChanged();
+
+function getInBounds(bounds, data) {
+	var inBounds = [];
+	for (var i = data.length - 1; i >= 0; i--) {
+		if(bounds.contains(new L.LatLng(data[i].lat, data[i].lon))) {
+			inBounds.push(data[i]);
+		}
+	}
+	return inBounds;
+}
+
+function onMapChanged() {
+	updateMap(getInBounds(map.getBounds(), aqiData));
+	getAqiByBounds(map.getBounds());
+}
+
+function getAqiByBounds(bounds) {
+	var url = "https://wind.waqi.info/mapq/bounds/?bounds=((" + bounds.getSouthWest().lat + "," + bounds.getSouthWest().lng + "),(" + bounds.getNorthEast().lat + "," + bounds.getNorthEast().lng + "))&inc=placeholders&k=_2Y2EnEh9mCVkcHT8OSCJWXmpNfEU+PSdRFWgdZg==&_=1473046535760";
+	jQuery.ajax(url).done(function( data ) {
+
+		for (var i = data.length - 1; i >= 0; i--) {
+			var exist = false;
+			for (var j = aqiData.length - 1; j >= 0; j--) {
+				if(data[i].idx === aqiData[j].idx) {
+					if(data[i].stamp > aqiData[j].stamp) {
+						aqiData[j] = data[i];
+					}
+					exist = true;
+					break;
+				}
+			}
+			if(!exist) {
+				aqiData.push(data[i]);
+			}
+		}
+
+		updateMap(getInBounds(map.getBounds(), aqiData));
+
+	    if ( console && console.log ) {
+	      console.log( "Sample of data:", aqiData.length );
+	    }
+	  });
+}
+
+function updateMap(pointdata) {
+	if(!pointdata || pointdata.length < 1) {
+		return;
+	}
+
+	var bounds = map.getBounds();
+	var sw = bounds.getSouthWest();
+	var ne = bounds.getNorthEast();
+	var topLeft = map.latLngToLayerPoint(new L.LatLng(ne.lat, sw.lng));
+	var bottomRight = map.latLngToLayerPoint(new L.LatLng(sw.lat, ne.lng));
+
+	voronoi.extent([[topLeft.x-1, topLeft.y-1], [bottomRight.x + 1, bottomRight.y + 1]])
+
+	//ピクセルポジション情報保存用
+	var positions = [];
+	
+	//位置情報→ピクセルポジション変換
+	pointdata.forEach(function(d) {        
+		var latlng = new L.LatLng(d.lat, d.lon);
+		positions.push({
+			x :map.latLngToLayerPoint(latlng).x,
+			y :map.latLngToLayerPoint(latlng).y
+		});
+	});
+    
+
+	//前サークルを削除
+	d3.selectAll('.AEDpoint').remove();
+	//サークル要素を追加
+	var circle = g.selectAll("circle")
+		.data(positions)
+		.enter()
+		.append("circle")
+		.attr("class", "AEDpoint")
+		.attr("cx", function(d, i) { return d.x; })
+		.attr("cy", function(d, i) { return d.y; })
+		.attr("r", 2)
+		.attr("fill", "red");
+  
+	//ボロノイ変換関数
+	// var polygons = voronoi.polygons(positions);
+	var diagram = voronoi(positions);
+	//polygons.forEach(function(v) { v.cell = v; });
+  
+	//前ボロノイPathを削除
+	svg.selectAll(".volonoi").remove();
+	//path要素を追加
+	svg.selectAll("path")
+		.data(diagram.polygons())
+		.enter()
+		.append("svg:path")
+		.attr("class", "volonoi")
+		.attr("d", function(d) { 
+			return d ? "M" + d.join("L") + "Z" : null; 
+		})
+		.attr("stroke", "white")
+		.attr("opacity", .3)
+		.attr("fill", function(d,i) { return aqiColour(pointdata[i].aqi==='-' ? 10 : (pointdata[i].aqi/1 || 10)); })
+		;
+}
+
+function legend() {
+	var svg = d3.select("#map").insert("svg:svg", "h2")
+		.attr("class", "aqiLegendContainer")
+		;
+
+	var linear = d3.scaleLinear()
+	  .domain([0, 51, 101, 151, 201])
+	  .range(["green", "yellow", "orange", "red", "black"]);
+
+	svg.append("g")
+	  .attr("class", "legendLinear")
+	  .attr("transform", "translate(20,20)");
+
+	var legendLinear = d3.legendColor()
+	  .shapeWidth(30)
+	  .cells([1, 51, 101, 151, 201])
+	  .orient('horizontal')
+	  .scale(linear);
+
+	svg.select(".legendLinear")
+	  .call(legendLinear);
+}
+
+</script>
+</body>
+</html>
